@@ -10,8 +10,8 @@ namespace ArrayProcessing1
     {
         static void Main(string[] args)
         {
-            int[] array1 = new int[100];
-            int[] frequency = new int[100];
+            int[] arrayList = new int[100];
+            int[] frequencyofOccurence = new int[100];
             int n, i, j, ctr;
 
 
@@ -22,32 +22,32 @@ namespace ArrayProcessing1
             for (i = 0; i < n; i++)
             {
                 Console.Write("element - {0} : ", i);
-                array1[i] = Convert.ToInt32(Console.ReadLine());
-                frequency[i] = -1;
+                arrayList[i] = Convert.ToInt32(Console.ReadLine());
+                frequencyofOccurence[i] = -1;
             }
             for (i = 0; i < n; i++)
             {
                 ctr = 1;
                 for (j = i + 1; j < n; j++)
                 {
-                    if (array1[i] == array1[j])
+                    if (arrayList[i] == arrayList[j])
                     {
                         ctr++;
-                        frequency[j] = 0;
+                        frequencyofOccurence[j] = 0;
                     }
                 }
 
-                if (frequency[i] != 0)
+                if (frequencyofOccurence[i] != 0)
                 {
-                    frequency[i] = ctr;
+                    frequencyofOccurence[i] = ctr;
                 }
             }
-            Console.Write("\nThe frequency of all elements of the array : \n");
+            Console.Write("\nThe frequencyofOccurence of all elements of the array : \n");
             for (i = 0; i < n; i++)
             {
-                if (frequency[i] != 0)
+                if (frequencyofOccurence[i] != 0)
                 {
-                    Console.Write("{0} occurs {1} times\n", array1[i], frequency[i]);
+                    Console.Write("{0} occurs {1} times\n", arrayList[i], frequencyofOccurence[i]);
                 }
             }
         }
